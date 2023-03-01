@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * puts2 - prints every character of a string
  * and a new line.
@@ -12,7 +13,7 @@ void puts2(char *str)
 
 	while (*str)
 	{
-		count++
+		count++;
 		str++;
 	}
 
