@@ -12,8 +12,7 @@ void _print_rev_recursion(char *s)
 		_print_rev_recursion(s + 1);/*move to the next character*/
 		_putchar(*s);/*print the character the string pointer is pointing to */
 	}
-	else
-		_putchar('\n');/*print a new line*/
+
 
 
 }
