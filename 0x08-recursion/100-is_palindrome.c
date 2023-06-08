@@ -36,7 +36,7 @@ int _check_palindrome(char *s, int first, int last)
 		return (0);
 	}
 	return (_check_palindrome(s, first + 1, last - 1));
-	
+
 }
 
 /**
