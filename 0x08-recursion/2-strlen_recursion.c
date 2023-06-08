@@ -8,12 +8,13 @@
  **/
 int _strlen_recursion(char *s)
 {
-	int length = 0; /** length of a string*/
+	 /** length of a string*/
 
-	if (s[0] != '\0')
+	if (*s == '\0')/** string pointer is not at the end*/
 	{
-		length++;
-		_strlen_recursion(s + 1);
+
+		return (0);
 	}
-	return (length);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
