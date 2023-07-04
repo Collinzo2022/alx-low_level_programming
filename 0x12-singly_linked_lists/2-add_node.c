@@ -9,11 +9,11 @@
  *
  * Return: length of string.
  */
-unsigned int _strlen(char *str)
+int _strlen(const char *str)
 {
-	unsigned int i = 0;
+	int i = 0;
 
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		i++;
 	}
@@ -30,37 +30,18 @@ unsigned int _strlen(char *str)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new, *temp;
+	list_t *add;
 
-	if (str == NULL)
+	add = malloc(sizeof(list_t));
+
+	if (add == NULL)
 		return (NULL);
+	add->str = strdup(str);
+
+	add->len = _strlen(str);
+	add->next = *head;
+	*head = add;
 
 
-	new = malloc(sizeof(list_t));
-
-	if (new == NULL)
-		return (NULL);
-
-	new->str = strdup(str);
-
-	if (new->str == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-	new->len = _strlen(new->str);
-	new->next = NULL;
-
-	if (*head == NULL)
-	{
-		*head = new;
-		return (new);
-	}
-
-	temp = *head;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = new;
-
-	return (new);
+	return (add);
 }
