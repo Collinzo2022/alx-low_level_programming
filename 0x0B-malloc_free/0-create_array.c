@@ -14,6 +14,9 @@ char *create_array(unsigned int size, char c)
 	unsigned int i;
 	char *ptarray;
 
+	if (size == 0)
+		return (NULL);
+
 	ptarray = malloc(size * sizeof(char));
 	if (ptarray == NULL)
 	{
