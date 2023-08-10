@@ -11,7 +11,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *arr;
-	unsigned int i;
+
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -24,12 +24,28 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (arr == NULL)
 		return (NULL);
 
-	while (i < (nmemb * size))
-	{
-		arr[i] = 0;
-		i++;
-	}
+	_memset(arr, 0, nmemb * size);
 
 
 	return (arr);
+}
+/**
+ * _memset - fills memory with chars.
+ * @s: array.
+ * @c: character.
+ * @num: number of bytes.
+ *
+ * Return: array.
+ */
+char *_memset(char *s, char c, unsigned int num)
+{
+	unsigned int i = 0;
+
+	while (i < num)
+	{
+		s[i] = c;
+		i++;
+	}
+
+	return (s);
 }
