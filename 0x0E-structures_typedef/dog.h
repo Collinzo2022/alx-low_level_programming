@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * struct dog - struct that defines a dog detail.
  * @name: name of the dog.
